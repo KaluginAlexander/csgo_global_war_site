@@ -25,7 +25,7 @@ SECRET_KEY = '#7(msz#8gcg9qu-#a#trnqr@m)+z@w@^(*8fbg+rvytfeffbj0'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['global-war-csgo.ru']
+ALLOWED_HOSTS = ['global-war-csgo.ru', '127.0.0.1']
 
 
 # Application definition
@@ -103,7 +103,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ru'
 
 TIME_ZONE = 'UTC'
 
@@ -118,10 +118,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # default static files settings for PythonAnywhere.
 # see https://help.pythonanywhere.com/pages/DjangoStaticFiles for more info
-MEDIA_ROOT = '/home/Elfyooo/csgo_global_war_site/media'
 MEDIA_URL = '/media/'
-STATIC_ROOT = '/home/Elfyooo/csgo_global_war_site/static'
-STATIC_URL = '/static/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
