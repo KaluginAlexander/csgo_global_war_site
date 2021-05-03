@@ -27,9 +27,13 @@
 
 /* Текста */
 .menu .text {
+    display: flex;
+    align-items: center;
+
     margin: 20px;
     text-align: center;
     padding: 25px 15px;
+    height: 200px;
     
     font-size: 22px;
     border-radius: 20px;
