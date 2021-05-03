@@ -1,0 +1,30 @@
+@font-face {
+    font-family: Tought-Sans;
+    src: url('/static/fonts/tought-sans.otf');
+}
+
+* {
+    padding: 0;
+    margin: 0;
+
+    box-sizing: border-box;
+    font-family: Tought-Sans;
+}
+
+/* позиционирование блоков на сайте */
+body {
+    display: flex;
+    justify-content: center;
+}
+
+
+.container {
+    width: 1280px;
+    min-width: 375px;
+    min-height: 100vh;
+    
+    background-image: url('/static/img/top-bg.png');
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
