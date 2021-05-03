@@ -1,0 +1,13 @@
+@media screen and (min-width: 720px) {
+    header {
+        position: sticky;
+        position: -webkit-sticky;
+        top: 0px;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .container {
+        background-size: cover;
+    }
+}

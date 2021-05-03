@@ -15,16 +15,37 @@
 body {
     display: flex;
     justify-content: center;
+
+    background-color: rgb(96, 56, 100);
 }
 
 
 .container {
     width: 1280px;
     min-width: 375px;
-    min-height: 100vh;
+    min-height: 300vh;
     
     background-image: url('/static/img/top-bg.png');
     background-attachment: fixed;
     background-position: center;
-    background-size: cover;
+    background-size: auto;
+    background-repeat: no-repeat;
+}
+
+
+/* Шапка сайта */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 120px;
+    width: 100%;
+    max-width: 1280px;
+    
+    background-color: rgb(96, 56, 100, 0.9);
+}
+
+header .logoBlock img {
+    height: 120px;
 }
