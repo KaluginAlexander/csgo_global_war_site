@@ -1,7 +1,6 @@
 .menu {
     display: flex;
-
-    min-height: 100vh;
+    width: 100%;
 
     color: white;
 }
@@ -11,8 +10,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
-    width: 25%;
+
+    cursor: pointer;
 }
 
 /* Размер иконок */
@@ -40,17 +39,17 @@
 
 /* Цвета кнопок */
 .menu .info {
-    background-color: rgb(59, 26, 71, 0.7);
+    background-color: rgb(59, 26, 71, 0.5);
 }
 
 .menu .about {
-    background-color: rgb(127, 37, 107, 0.7);
+    background-color: rgb(127, 37, 107, 0.5);
 }
 
 .menu .shop {
-    background: linear-gradient(rgb(187, 42, 163, 0.8), rgb(204, 108, 120, 0.8))
+    background: linear-gradient(rgb(187, 42, 163, 0.5), rgb(204, 108, 120, 0.5))
 }
 
 .menu .faq {
-    background-color: rgb(204, 82, 193, 0.8);
+    background-color: rgb(204, 82, 193, 0.5);
 }

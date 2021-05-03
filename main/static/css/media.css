@@ -1,12 +1,53 @@
-@media screen and (min-width: 720px) {
+/* Мобильня версия */
+@media screen and (max-width: 860px) {
+    .container {
+        background-size: cover;
+    }
+
+    /* Меню */
+    .menu {
+        flex-direction: column;
+        height: calc(100vh - 120px);
+    }
+    .menu .title {
+        margin-left: 0.4em;
+    }
+    .menu .button {
+        width: 100%;
+        height: 25%;
+    }
+    .menu .text {
+        display: none;
+    }
+    .menu .button {
+        flex-direction: row-reverse;
+        justify-content: center;
+    }
+
+}
+
+/* Пк версия */
+@media screen and (min-width: 860px) {
+    /* Шапка */
     header {
         position: fixed;
         top: 0px;
-    }
-}
 
-@media screen and (max-width: 720px) {
-    .container {
-        background-size: cover;
+    }
+    header .logoBlock {
+        transition: all 0.1s ease;
+    }
+    header .logoBlock:hover  {
+        transform: scale(1.1);
+    }
+
+    /* Меню */
+    .menu .button {
+        width: 25%;
+        height: 100vh;
+        transition: all 0.3s ease;
+    }
+    .menu .button:hover {
+        transform: translateY(-2em);
     }
 }

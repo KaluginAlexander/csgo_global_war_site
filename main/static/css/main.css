@@ -20,14 +20,14 @@ body {
 
 
 .container {
-    width: 1280px;
     min-width: 375px;
+    width: 100%;
     min-height: 300vh;
     
     background-image: url('/static/img/top-bg.png');
     background-attachment: fixed;
     background-position: center;
-    background-size: auto;
+    background-size: cover;
     background-repeat: no-repeat;
 }
 
@@ -40,9 +40,13 @@ header {
 
     height: 120px;
     width: 100%;
-    max-width: 1280px;
     
     background-color: rgb(75, 28, 83, 0.9);
+    z-index: 2;
+}
+
+header .logoBlock {
+    cursor: pointer;
 }
 
 header .logoBlock img {
