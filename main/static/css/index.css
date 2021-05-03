@@ -1,0 +1,56 @@
+.menu {
+    display: flex;
+
+    min-height: 100vh;
+
+    color: white;
+}
+
+.menu .button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    width: 25%;
+}
+
+/* Размер иконок */
+.menu img.icon {
+    width: 70px;
+    height: 60px;
+}
+
+/* Заголовки */
+.menu .title {
+    font-size: 40px;
+}
+
+/* Текста */
+.menu .text {
+    margin: 20px;
+    text-align: center;
+    padding: 25px 15px;
+    
+    font-size: 22px;
+    border-radius: 20px;
+    border: rgb(157, 26, 200) solid 2px;
+    background-color: rgb(0, 0, 0, 0.4);
+}
+
+/* Цвета кнопок */
+.menu .info {
+    background-color: rgb(59, 26, 71, 0.7);
+}
+
+.menu .about {
+    background-color: rgb(127, 37, 107, 0.7);
+}
+
+.menu .shop {
+    background: linear-gradient(rgb(187, 42, 163, 0.8), rgb(204, 108, 120, 0.8))
+}
+
+.menu .faq {
+    background-color: rgb(204, 82, 193, 0.8);
+}
