@@ -41,9 +41,8 @@ def notify(request):
             productId = bill['customFields']['productId']
             product = Product.objects.get(id = int(productId))
 
-            if product.cost == int(amount):
-                # Добавляем в бд запись
-                botDB.request('delay', f"INSERT INTO Invoices VALUES('{nickname}', {product.amount})", invoicesPath)
+            # Добавляем в бд запись
+            botDB.request('delay', f"INSERT INTO Invoices VALUES('{nickname}', {product.amount})", invoicesPath)
 
             # Помечаем заказ выполненым
             makedBills.append(billId)
