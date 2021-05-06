@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
+from shop.models import Product
 import hashlib, codecs, hmac
 import json, sys, os
 
@@ -35,11 +36,14 @@ def notify(request):
         # проверка подлиности
         if request.headers['X-Api-Signature-SHA256'] == accept and billId not in makedBills:
 
-            # Получаем аккаунт
+            # Получаем остальные данные
             nickname = bill['customer']['account']
+            productId = bill['customFields']['productId']
+            product = Product.objects.get(id = int(productId))
 
-            # Добавляем в бд запись
-            main.request('delay', f"INSERT INTO Invoices VALUES('{nickname}', {amount})", invoicesPath)
+            if product.cost == int(amount):
+                # Добавляем в бд запись
+                botDB.request('delay', f"INSERT INTO Invoices VALUES('{nickname}', {product.amount})", invoicesPath)
 
             # Помечаем заказ выполненым
             makedBills.append(billId)
