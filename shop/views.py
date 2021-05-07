@@ -4,7 +4,6 @@ from django.views.decorators.csrf import csrf_exempt
 from shop.models import Product
 import hashlib, codecs, hmac
 import json, sys, os
-from core.bot.database import main as botDB
 
 
 slash = ('/', '\\')['\\' in os.path.dirname(__file__)]
@@ -12,6 +11,7 @@ botPath = slash.join(os.path.dirname(__file__).split(slash)[0:-2]) + slash + 'CS
 invoicesPath = botPath + '/core/bot/database/data'
 sys.path.insert(0, botPath)
 
+from core.bot.database import main as botDB
 
 # Константы
 SECRET_KEY = 'eyJ2ZXJzaW9uIjoiUDJQIiwiZGF0YSI6eyJwYXlpbl9tZXJjaGFudF9zaXRlX3VpZCI6IjFnZnpjNC0wMCIsInVzZXJfaWQiOiI3OTAwMDIzOTUyMyIsInNlY3JldCI6ImFmYjFjNGRiYjllMGMwZGQ3OGFiYWIwOGJlZTBlZmUxZWMyZmU0OGYyZTc0YTk1NTY3MmFiNzgwMDAzNDY2NmUifX0='
