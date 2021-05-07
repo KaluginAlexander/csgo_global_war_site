@@ -28,9 +28,8 @@ def notify(request):
         amount = bill['amount']['value']
         billId = bill['billId']
         siteId = bill['siteId']
-        status = bill['status']['value']
         
-        invoice_parameters = f"RUB|{amount}|{billId}|{siteId}|{status}"
+        invoice_parameters = f"RUB|{amount}|{billId}|{siteId}|PAID"
         accept = hmac.new(codecs.encode(SECRET_KEY), msg=codecs.encode(invoice_parameters), digestmod=hashlib.sha256).hexdigest()
 
         # проверка подлиности
@@ -40,9 +39,16 @@ def notify(request):
             nickname = bill['customer']['account']
             productId = bill['customFields']['productId']
             product = Product.objects.get(id = int(productId))
+            
+            # Проверка, есть ли игрок с таким ником
+            result = botDB.request('users', f"SELECT id FROM Users WHERE nickname = '{nickname}'", invoicesPath)
 
-            # Добавляем в бд запись
-            botDB.request('delay', f"INSERT INTO Invoices VALUES('{nickname}', {product.amount})", invoicesPath)
+            if result:
+                userId = result[0]
+
+                # Добавляем в бд записи
+                botDB.request('delay', f"INSERT INTO Invoices VALUES('{nickname}', {product.amount})", invoicesPath)
+                botDB.request('delay', f"INSERT INTO Actions VALUES('donate-gold', {userId}, 1)", invoicesPath)
 
             # Помечаем заказ выполненым
             makedBills.append(billId)
