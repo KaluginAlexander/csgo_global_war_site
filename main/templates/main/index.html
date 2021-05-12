@@ -13,39 +13,60 @@
 </head>
 <body>
     
-    <div class="container">
+<div class="container">
 
-        <header>
+    <header>
 
-            <div class="logoBlock">
-                <img src="{% static '/img/logo.png' %}" alt="logo">
-            </div>
-            
-        </header>
+        <div class="logoBlock">
+            <img src="{% static '/img/logo.png' %}" alt="logo">
+        </div>
+        
+    </header>
 
-        <div class="menu">
-            
-            <div class="button about">
-                <h1 class="title">{{menu.about.key}}</h1>
-                <img class="icon" src="media/{{ menu.about.picture }}" alt="icon">
-                <p class="text">{{menu.about.value}}</p>
-            </div>
+    <div class="menu">
+        
+        <div class="button about">
+            <h1 class="title">{{menu.about.key}}</h1>
+            <img class="icon" src="media/{{ menu.about.picture }}" alt="icon">
+            <p class="text">{{menu.about.value}}</p>
+        </div>
 
-            <div class="button shop">
-                <h1 class="title">{{menu.shop.key}}</h1>
-                <img class="icon" src="media/{{ menu.shop.picture }}" alt="icon">
-                <p class="text">{{menu.shop.value}}</p>
-            </div>
+        <div class="button shop">
+            <h1 class="title">{{menu.shop.key}}</h1>
+            <img class="icon" src="media/{{ menu.shop.picture }}" alt="icon">
+            <p class="text">{{menu.shop.value}}</p>
+        </div>
 
-            <div class="button faq">
-                <h1 class="title">{{menu.faq.key}}</h1>
-                <img class="icon" src="media/{{ menu.faq.picture }}" alt="icon">
-                <p class="text">{{menu.faq.value}}</p>
-            </div>
-
+        <div class="button faq">
+            <h1 class="title">{{menu.faq.key}}</h1>
+            <img class="icon" src="media/{{ menu.faq.picture }}" alt="icon">
+            <p class="text">{{menu.faq.value}}</p>
         </div>
 
     </div>
+    
+    <div class="blocks">
+        <section class="content-block">
+            <h2 class="title">{{menu.about.key}}</h2>
+        
+
+        </section>
+
+        <section class="content-block">
+            <h2 class="title">{{menu.shop.key}}</h2>
+
+        
+
+        </section>
+
+        <section class="content-block">
+            <h2 class="title">{{menu.faq.key}}</h2>
+        
+
+        </section>
+    </div>
+
+</div>
 
 </body>
 </html>

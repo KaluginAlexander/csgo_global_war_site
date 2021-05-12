@@ -24,6 +24,12 @@
         justify-content: center;
     }
 
+    /* Блоки */
+    .content-block {
+        margin: 20vh 0vh;
+        border-radius: 0;
+    }
+
 }
 
 /* Пк версия */
@@ -49,5 +55,15 @@
     }
     .menu .button:hover {
         transform: translateY(-2em);
+    }
+
+    /* Блоки */
+    .blocks {
+        padding: 5vw;
+    }
+
+    .content-block {
+        margin: 20vh;
+        border-radius: 20px;
     }
 }
