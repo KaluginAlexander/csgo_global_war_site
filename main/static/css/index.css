@@ -70,6 +70,7 @@
     min-height: 80vh;
     max-width: 1560px;
     width: 100%;
+    position: relative;
 
     background-color: rgb(175, 63, 171, 0.6);
     border: #ec26eb solid 5px;
@@ -86,13 +87,29 @@
     margin: 1em;
 }
 
+.content-block .block-logo {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    opacity: 0.8;
+}
+
+.content-block .block-logo img {
+    height: 80px;
+    width: 80px;
+}
+
 /* Блок "О нас" */
-.content-block.about .text {
+.about.content-block .text {
     font-size: 40px;
     text-align: center;
     color: white;
 }
 
-.about .text black {
+.about.content-block p {
+    margin-top: 1em;
+}
+
+.about.content-block .text black {
     color: black;
 }
