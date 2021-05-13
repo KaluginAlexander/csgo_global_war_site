@@ -46,8 +46,14 @@
     </div>
     
     <div class="blocks">
-        <section class="content-block">
+        <section class="content-block about">
             <h2 class="title">{{menu.about.key}}</h2>
+
+            <div class="content">
+                <div class="text">
+                    {{ page.about.value|safe|escape }}
+                </div>
+            </div>
         
 
         </section>

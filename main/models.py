@@ -13,3 +13,16 @@ class MenuContent(models.Model):
         verbose_name = 'контент'
         verbose_name_plural = 'контент меню'
         ordering = ['pk']
+
+
+class AboutContent(models.Model):
+    key = models.CharField('ключ', max_length=150)
+    value = models.TextField('значение', max_length=2300)
+
+    def __str__(self):
+        return self.key
+
+    class Meta:
+        verbose_name = 'контент'
+        verbose_name_plural = 'контент "О нас"'
+        ordering = ['pk']
