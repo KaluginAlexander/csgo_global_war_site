@@ -30,6 +30,16 @@
         border-radius: 0;
     }
 
+    .content-block .block-logo img {
+        height: 50px;
+        width: 50px;
+    }
+
+
+    /* О нас */
+    .about.content-block .text {
+        font-size: 30px;
+    }
 }
 
 /* Пк версия */
@@ -65,5 +75,15 @@
     .content-block {
         margin: 20vh;
         border-radius: 20px;
+    }
+
+    .content-block .block-logo img {
+        height: 80px;
+        width: 80px;
+    }
+
+    /* О нас */
+    .about.content-block .text {
+        font-size: 40px;
     }
 }
