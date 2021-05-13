@@ -113,3 +113,56 @@
 .about.content-block .text black {
     color: black;
 }
+
+/* Товары */
+.shop.content-block .products {
+    display: flex;
+    gap: 1em;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.shop.content-block .product {
+    background-color: rgb(0, 0, 0, 0.2);
+    padding: 1em;
+    width: 250px;
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.shop.content-block .product h3.title-product {
+    font-size: 35px;
+    width: 100%;
+    text-align: center;
+
+    border-bottom: 3px solid #ef15f0;
+}
+
+
+.shop.content-block img.icon {
+    height: 150px;
+    align-self: center;
+}
+
+.shop.content-block p.subscription {
+    text-align: center;
+    font-size: 23px;
+}
+
+.shop.content-block p.cost {
+    text-align: center;
+    border-top: 3px solid #ef15f0;
+    border-bottom: 3px solid #ef15f0;
+    margin-top: 1em;
+    font-size: 29px;
+}
+
+yellow {
+    color: yellow;
+}

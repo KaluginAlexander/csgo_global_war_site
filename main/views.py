@@ -1,20 +1,21 @@
 from typing_extensions import ParamSpecKwargs
 from django.shortcuts import render
-from main import models as models
-
+from main.models import AboutContent, MenuContent
+from shop.models import Product
 
 # Create your views here.
 def index(request):
 
     context = {
         'menu': {
-            'about': models.MenuContent.objects.get(id=2),
-            'shop': models.MenuContent.objects.get(id=3),
-            'faq': models.MenuContent.objects.get(id=4),
+            'about': MenuContent.objects.get(id=2),
+            'shop': MenuContent.objects.get(id=3),
+            'faq': MenuContent.objects.get(id=4),
         },
         'page': {
-            'about': models.AboutContent.objects.get(id=1)
-        }
+            'about': AboutContent.objects.get(id=1)
+        },
+        'products': Product.objects.all()
     }
 
     return render(request, 'main/index.html', context)

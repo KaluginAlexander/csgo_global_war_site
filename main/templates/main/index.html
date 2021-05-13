@@ -63,7 +63,7 @@
 
         </section>
 
-        <section class="content-block">
+        <section class="shop content-block">
 
             <div class="block-logo">
                 <img src="{% static 'img/logo-block.png' %}" alt="logo">
@@ -71,6 +71,25 @@
 
             <h2 class="title">{{menu.shop.key}}</h2>
 
+            <div class="content">
+                
+                <div class="products">
+                    {% for product in products %}
+                    
+                    <div class="product">
+                        <h3 class="title-product">{{ product.title }}</h3>
+
+                        <img src="media/{{ product.picture }}" class="icon" alt="icon">
+                        
+                        <p class="subscription">{{ product.subscription }}</p>
+
+                        <p class="cost">Цена: <yellow>{{ product.cost }}</yellow> руб.</p>
+                    </div>
+                    
+                    {% endfor %}
+                </div>
+
+            </div>
             
 
         </section>
