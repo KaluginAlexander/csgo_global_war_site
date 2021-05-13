@@ -87,7 +87,7 @@
 }
 
 /* Блок "О нас" */
-.about .text {
+.content-block.about .text {
     font-size: 40px;
     text-align: center;
     color: white;
