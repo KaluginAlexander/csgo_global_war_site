@@ -16,6 +16,7 @@
 body {
     display: flex;
     justify-content: center;
+    overflow: auto;
 }
 
 
@@ -51,4 +52,12 @@ header .logoBlock {
 
 header .logoBlock img {
     height: 120px;
+}
+
+yellow {
+    color: yellow;
+}
+
+black {
+    color: black;
 }

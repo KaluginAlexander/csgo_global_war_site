@@ -1,5 +1,12 @@
 /* Мобильня версия */
 @media screen and (max-width: 860px) {
+    /* модалка */
+    .modal-window .content {
+        width: 100vw;
+        height: 100vh;
+        justify-content: center;
+    }
+
     .container {
         background-size: cover;
     }
@@ -44,6 +51,38 @@
 
 /* Пк версия */
 @media screen and (min-width: 860px) {
+    /* модалка */
+    .modal-window .content {
+        width: 700px;
+        height: 400px;
+        border-radius: 30px;
+        height: auto;
+    }
+
+    .modal-window button {
+        transition: 0.8s ease;
+    }
+
+    .modal-window button:hover {
+        color: white;
+    }
+
+    .modal-window input {
+        transition: 0.8s ease;
+    }
+
+    .modal-window input:focus {
+        border: 3px solid purple;
+    }
+
+    .modal-window .cross {
+        transition: 0.4s ease;
+    }
+
+    .modal-window .cross:hover {
+        color: gray;
+    }
+
     /* Шапка */
     header {
         position: fixed;

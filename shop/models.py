@@ -12,6 +12,9 @@ class Product(models.Model):
     amount = models.IntegerField('количество выдаваемого золота', validators=[MinValueValidator(0)])
 
 
+    def payUrl(self, nickname):
+        return Product.get_pay_url(nickname, self.pk)
+    
     def __str__(self):
         return f"{self.title} ({self.amount})"
 

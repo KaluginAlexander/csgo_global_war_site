@@ -110,10 +110,6 @@
     margin-top: 1em;
 }
 
-.about.content-block .text black {
-    color: black;
-}
-
 /* Товары */
 .shop.content-block .products {
     display: flex;
@@ -161,8 +157,4 @@
     border-bottom: 3px solid #ef15f0;
     margin-top: 1em;
     font-size: 29px;
-}
-
-yellow {
-    color: yellow;
 }
