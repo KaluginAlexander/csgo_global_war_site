@@ -49,7 +49,10 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django_referrer_policy.middleware.ReferrerPolicyMiddleware'
 ]
+
+REFERRER_POLICY = 'no-referrer-when-downgrade'
 
 ROOT_URLCONF = 'csgo_global_war_site.urls'
 
