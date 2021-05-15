@@ -26,6 +26,7 @@ def index(request):
                 'about': MenuContent.objects.get(id=2),
                 'shop': MenuContent.objects.get(id=3),
                 'faq': MenuContent.objects.get(id=4),
+                'game': MenuContent.objects.get(id=5),
             },
             'page': {
                 'about': AboutContent.objects.get(id=1)
