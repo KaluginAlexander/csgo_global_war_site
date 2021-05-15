@@ -10,6 +10,10 @@ $(document).ready(function () {
         // Вкл модалки
         $('.modal-window').css('display', 'flex')
 
+        // Анимация
+        $('.modal-window .content').fadeOut(0);
+        $('.modal-window .content').fadeIn(300);
+
         // Заполнение productId
         let productId = $(this).data('id');
         $('#productId').val(productId);
@@ -35,5 +39,38 @@ $(document).ready(function () {
         $('.modal-window').css('display', 'none')
     })
 
+    // При клике на кнопки в меню
+
+    $('.menu .button').on('click', function() {
+
+        // Получаем классы
+        let classList = $(this).attr("class").split(/\s+/),
+            dist;
+
+        // Обрабатываем
+        if (classList.includes('game')) {
+            let link = document.createElement('a');
+            link.href = 'https://vk.com/im?media=&sel=-201695936';
+            link.click();
+        }
+
+        else if (classList.includes('about')) {
+            dist = $(".content-block.about").offset().top;
+        }
+
+        else if (classList.includes('shop')) {
+            dist = $(".content-block.shop").offset().top;
+        }
+
+        else if (classList.includes('faq')) {
+            dist = $(".content-block.faq").offset().top;
+        }
+
+        // Скролл
+        $([document.documentElement, document.body]).animate({
+            scrollTop: dist - $('header').height() - 50
+        }, dist / 2);
+
+    })
 
 });
