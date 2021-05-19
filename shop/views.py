@@ -1,10 +1,11 @@
+from csgo_global_war_site import settings
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 from shop.models import Product
 import hashlib, codecs, hmac
 import json, sys, os
-
+from csgo_global_war_site import settings
 
 slash = ('/', '\\')['\\' in os.path.dirname(__file__)]
 botPath = slash.join(os.path.dirname(__file__).split(slash)[0:-2]) + slash + 'CSGO_vk_bot'
@@ -14,7 +15,6 @@ sys.path.insert(0, botPath)
 from core.bot.database import main as botDB
 
 # Константы
-SECRET_KEY = 'eyJ2ZXJzaW9uIjoiUDJQIiwiZGF0YSI6eyJwYXlpbl9tZXJjaGFudF9zaXRlX3VpZCI6IjFnZnpjNC0wMCIsInVzZXJfaWQiOiI3OTAwMDIzOTUyMyIsInNlY3JldCI6ImFmYjFjNGRiYjllMGMwZGQ3OGFiYWIwOGJlZTBlZmUxZWMyZmU0OGYyZTc0YTk1NTY3MmFiNzgwMDAzNDY2NmUifX0='
 makedBills = []
 
 
@@ -30,7 +30,7 @@ def notify(request):
         siteId = bill['siteId']
         
         invoice_parameters = f"RUB|{amount}|{billId}|{siteId}|PAID"
-        accept = hmac.new(codecs.encode(SECRET_KEY), msg=codecs.encode(invoice_parameters), digestmod=hashlib.sha256).hexdigest()
+        accept = hmac.new(codecs.encode(settings.QIWI_SECRET_KEY), msg=codecs.encode(invoice_parameters), digestmod=hashlib.sha256).hexdigest()
 
         # проверка подлиности
         if request.headers['X-Api-Signature-SHA256'] == accept and billId not in makedBills:

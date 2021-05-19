@@ -1,8 +1,7 @@
 from django.db import models
 from django.core.validators import MinValueValidator
 
-PUBLIC_KEY = '48e7qUxn9T7RyYE1MVZswX1FRSbE6iyCj2gCRwwF3Dnh5XrasNTx3BGPiMsyXQFNKQhvukniQG8RTVhYm3iP3EYJiPrgY9L9hTisRHtPRnbUTgw7FKt58sZoJ6Lp2GkMvVudi8zu3hfdPpRFLG6FpBxJ4WCf7WDBboRs3W9ir2ywtfUU9rsVGY5KexvQ2'
-
+from csgo_global_war_site import settings
 # Create your models here.
 class Product(models.Model):
     title = models.CharField('название', max_length=150)
@@ -23,7 +22,7 @@ class Product(models.Model):
         global PUBLIC_KEY
         amount = Product.objects.get(id = int(productId)).cost
         
-        return f'https://oplata.qiwi.com/create?publicKey={PUBLIC_KEY}&account={account}&amount={amount}&successUrl={successUrl}&customFields[productId]={productId}'
+        return f'https://oplata.qiwi.com/create?publicKey={settings.QIWI_PUBLIC_KEY}&account={account}&amount={amount}&successUrl={successUrl}&customFields[productId]={productId}'
 
     
     class Meta:

@@ -52,8 +52,6 @@ MIDDLEWARE = [
     'django_referrer_policy.middleware.ReferrerPolicyMiddleware'
 ]
 
-REFERRER_POLICY = 'no-referrer-when-downgrade'
-
 ROOT_URLCONF = 'csgo_global_war_site.urls'
 
 TEMPLATES = [
@@ -129,3 +127,9 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 # see https://help.pythonanywhere.com/pages/DjangoStaticFiles for more info
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# Qiwi settings
+REFERRER_POLICY = 'no-referrer-when-downgrade'
+
+QIWI_PUBLIC_KEY = ''
+QIWI_SECRET_KEY = ''
