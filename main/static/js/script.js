@@ -73,4 +73,15 @@ $(document).ready(function () {
 
     })
 
+
+    // Обработка клика по вопросу в FAQ
+    $('.question-cb').change(function(){
+        let element = $(this).get(0),
+            questionID = $(this).data('id'),
+            jqAnswer = $(`#answer-${questionID}`),
+            answer = jqAnswer.get(0);
+
+            answer.hidden = !element.checked;
+        
+    })
 });

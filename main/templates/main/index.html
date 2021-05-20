@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
     <link rel="stylesheet" href="{% static 'css/index.css' %}">
     <link rel="stylesheet" href="{% static 'css/media.css' %}">
-    <link rel="stylesheet" href="{% static 'css/modal.css' %}">
+    <link rel="stylesheet" href="{% static 'css/modal.css' %}">    
 
     <script src="{% static 'js/jquery-3.6.0.min.js' %}" defer></script>
     <script src="{% static 'js/script.js' %}" defer></script>
@@ -135,7 +135,23 @@
             </div>
 
             <h2 class="title">{{menu.faq.key}}</h2>
-        
+
+            <div class="questions">
+
+                {% for question in questions %}
+                <div class="question" data-id="{{ question.pk }}" id="question-{{ question.pk }}">
+                    
+                    <div class="question-string">
+                        <input type="checkbox" data-id="{{ question.pk }}" class="question-cb" id="question-cb-{{question.pk}}" name="question-cb-{{question.pk}}">
+                        <label for="question-cb-{{question.pk}}">{{ question.question }}</label>
+                    </div>
+
+                    <p class="answer" id="answer-{{ question.pk }}"  hidden>{{ question.answer }}</p>
+
+                </div>
+                {% endfor %}
+
+            </div>
 
         </section>
     </div>

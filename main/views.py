@@ -1,7 +1,7 @@
 from typing_extensions import ParamSpecKwargs
 from django.shortcuts import redirect, render
 from django.urls import reverse
-from main.models import AboutContent, MenuContent
+from main.models import AboutContent, MenuContent, Question
 from shop.models import Product
 
 # Create your views here.
@@ -28,10 +28,13 @@ def index(request):
                 'faq': MenuContent.objects.get(id=4),
                 'game': MenuContent.objects.get(id=5),
             },
+            
             'page': {
                 'about': AboutContent.objects.get(id=1)
             },
-            'products': Product.objects.all()
+
+            'products': Product.objects.all(),
+            'questions': Question.objects.all(),
         }
 
         return render(request, 'main/index.html', context)
