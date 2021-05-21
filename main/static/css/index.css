@@ -71,8 +71,9 @@
     max-width: 1560px;
     width: 100%;
     position: relative;
+    padding-bottom: 1em;
 
-    background-color: rgb(175, 63, 171, 0.6);
+    background-color: rgb(175, 63, 171, 0.7);
     border: #ec26eb solid 5px;
 }
 
