@@ -1,0 +1,142 @@
+/* Мобильня версия */
+@media screen and (max-width: 860px) {
+    /* модалка */
+    .modal-window .content {
+        width: 100vw;
+        height: 100vh;
+        justify-content: center;
+    }
+
+    .container {
+        background-size: cover;
+    }
+
+    /* Меню */
+    .menu {
+        flex-direction: column;
+        height: calc(100vh - 120px);
+    }
+    .menu .title {
+        margin-left: 0.4em;
+    }
+    .menu .button {
+        width: 100%;
+        height: 33.33%;
+    }
+    .menu .text {
+        display: none;
+    }
+    .menu .button {
+        flex-direction: row-reverse;
+        justify-content: center;
+    }
+
+    /* Блоки */
+    .content-block {
+        margin: 20vh 0vh;
+        border-radius: 0;
+    }
+
+    .content-block .block-logo img {
+        height: 50px;
+        width: 50px;
+    }
+
+
+    /* О нас */
+    .about.content-block .text {
+        font-size: 30px;
+    }
+}
+
+/* Пк версия */
+@media screen and (min-width: 860px) {
+    /* модалка */
+    .modal-window .content {
+        width: 700px;
+        height: 400px;
+        border-radius: 30px;
+        height: auto;
+    }
+
+    .modal-window button {
+        transition: 0.8s ease;
+    }
+
+    .modal-window button:hover {
+        color: white;
+    }
+
+    .modal-window input {
+        transition: 0.8s ease;
+    }
+
+    .modal-window input:focus {
+        border: 3px solid purple;
+    }
+
+    .modal-window .cross {
+        transition: 0.4s ease;
+    }
+
+    .modal-window .cross:hover {
+        color: gray;
+    }
+
+    /* Шапка */
+    header {
+        position: fixed;
+        top: 0px;
+
+    }
+    header .logoBlock {
+        transition: all 0.1s ease;
+    }
+    header .logoBlock:hover  {
+        transform: scale(1.1);
+    }
+
+    /* Меню */
+    .menu .button {
+        width: 33.33%;
+        height: 100vh;
+        transition: all 0.3s ease;
+    }
+    .menu .button:hover {
+        transform: translateY(-2em);
+    }
+
+    /* Блоки */
+    .blocks {
+        padding: 5vw;
+    }
+
+    .content-block {
+        margin: 20vh;
+        border-radius: 20px;
+    }
+
+    .content-block .block-logo img {
+        height: 80px;
+        width: 80px;
+        transition: 0.5s ease;
+    }
+
+    .content-block .block-logo img:hover {
+        transform: scale(1.3);
+    }
+
+    /* О нас */
+    .about.content-block .text {
+        font-size: 40px;
+    }
+    
+    /* Товары */
+    .shop.content-block .product {
+        transition: ease 0.3s;
+    }
+    .shop.content-block .product:hover {
+        background-color: rgb(0, 0, 0, 0.4);
+        transform: scale(1.05);
+    }
+}

@@ -1,0 +1,71 @@
+@font-face {
+    font-family: Tought-Sans;
+    src: url('/static/fonts/tought-sans.otf');
+}
+
+* {
+    padding: 0;
+    margin: 0;
+
+    box-sizing: border-box;
+    font-family: Tought-Sans;
+    font-weight: lighter;
+}
+
+* {
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* позиционирование блоков на сайте */
+body {
+    display: flex;
+    justify-content: center;
+    overflow: auto;
+}
+
+
+.container {
+    min-width: 375px;
+    width: 100%;
+    min-height: 300vh;
+    
+    background-image: url('/static/img/top-bg.png');
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+/* Шапка сайта */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 120px;
+    width: 100%;
+    
+    background-color: rgb(75, 28, 83, 0.9);
+    z-index: 2;
+}
+
+header .logoBlock {
+    cursor: pointer;
+}
+
+header .logoBlock img {
+    height: 120px;
+}
+
+yellow {
+    color: yellow;
+}
+
+black {
+    color: black;
+}

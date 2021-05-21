@@ -10,21 +10,33 @@
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
     <link rel="stylesheet" href="{% static 'css/index.css' %}">
     <link rel="stylesheet" href="{% static 'css/media.css' %}">
-    <link rel="stylesheet" href="{% static 'css/modal.css' %}">    
+    <link rel="stylesheet" href="{% static 'css/modal.css' %}">
 
     <script src="{% static 'js/jquery-3.6.0.min.js' %}" defer></script>
     <script src="{% static 'js/script.js' %}" defer></script>
+
+
+    <meta name="yandex-verification" content="5fbeb67565ded16b" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PGH388XYHZ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-PGH388XYHZ');
+    </script>
+
 </head>
 <body>
 
 <div class="modal-window">
 
-    
+
     <div class="content">
         <div class="cross">×</div>
 
         <form method="post"> {% csrf_token %}
-            
+
             <h2 class="title">Введите ваш ник в поле ниже:</h2>
 
             <p>
@@ -40,7 +52,7 @@
     </div>
 
 </div>
-    
+
 <div class="container">
 
     <header>
@@ -48,7 +60,7 @@
         <a href="#" class="logoBlock">
             <img id="logo" src="{% static '/img/logo.png' %}" alt="logo">
         </a>
-        
+
     </header>
 
     <div class="menu">
@@ -58,7 +70,7 @@
             <img class="icon" src="media/{{ menu.game.picture }}" alt="icon">
             <p class="text">{{menu.game.value}}</p>
         </div>
-        
+
         <div class="button about">
             <h1 class="title">{{menu.about.key}}</h1>
             <img class="icon" src="media/{{ menu.about.picture }}" alt="icon">
@@ -78,7 +90,7 @@
         </div>
 
     </div>
-    
+
     <div class="blocks">
         <section class="content-block about">
 
@@ -93,7 +105,7 @@
                     {{ page.about.value|safe|escape }}
                 </div>
             </div>
-        
+
 
         </section>
 
@@ -106,25 +118,25 @@
             <h2 class="title">{{menu.shop.key}}</h2>
 
             <div class="content">
-                
+
                 <div class="products">
                     {% for product in products %}
-                    
+
                     <div class="product" data-id="{{ product.id }}">
                         <h3 class="title-product">{{ product.title }}</h3>
 
                         <img src="media/{{ product.picture }}" class="icon" alt="icon">
-                        
+
                         <p class="subscription">{{ product.subscription }}</p>
 
                         <p class="cost">Цена: <yellow>{{ product.cost }}</yellow> руб.</p>
                     </div>
-                    
+
                     {% endfor %}
                 </div>
 
             </div>
-            
+
 
         </section>
 
@@ -140,7 +152,7 @@
 
                 {% for question in questions %}
                 <div class="question" data-id="{{ question.pk }}" id="question-{{ question.pk }}">
-                    
+
                     <div class="question-string">
                         <input type="checkbox" data-id="{{ question.pk }}" class="question-cb" id="question-cb-{{question.pk}}" name="question-cb-{{question.pk}}">
                         <label for="question-cb-{{question.pk}}">{{ question.question }}</label>

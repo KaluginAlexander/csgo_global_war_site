@@ -1,0 +1,212 @@
+.menu {
+    display: flex;
+    width: 100%;
+
+    color: white;
+    border-bottom: #ec26eb solid 5px;
+}
+
+.menu .button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+}
+
+/* Размер иконок */
+.menu img.icon {
+    width: 70px;
+    height: 60px;
+}
+
+/* Заголовки */
+.menu .title {
+    font-size: 40px;
+}
+
+/* Текста */
+.menu .text {
+    display: flex;
+    align-items: center;
+
+    margin: 20px;
+    text-align: center;
+    padding: 25px 15px;
+    height: 200px;
+    
+    font-size: 22px;
+    border-radius: 20px;
+    border: rgb(157, 26, 200) solid 2px;
+    background-color: rgb(0, 0, 0, 0.4);
+}
+
+/* Цвета кнопок */
+.menu .game {
+    background-color: rgb(59, 26, 71, 0.5);
+}
+
+.menu .about {
+    background-color: rgb(127, 37, 107, 0.5);
+}
+
+.menu .shop {
+    background: linear-gradient(rgb(187, 42, 163, 0.5), rgb(204, 108, 120, 0.5))
+}
+
+.menu .faq {
+    background-color: rgb(204, 82, 193, 0.5);
+}
+
+/* Блоки контента */
+.blocks {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.content-block {
+    min-height: 80vh;
+    max-width: 1560px;
+    width: 100%;
+    position: relative;
+
+    background-color: rgb(175, 63, 171, 0.6);
+    border: #ec26eb solid 5px;
+}
+
+.content-block .title {
+    font-size: 60px;
+    text-align: center;
+    margin: 0.4em;
+    color: white;
+}
+
+.content-block .content {
+    margin: 1em;
+}
+
+.content-block .block-logo {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    opacity: 0.8;
+}
+
+.content-block .block-logo img {
+    height: 80px;
+    width: 80px;
+}
+
+/* Блок "О нас" */
+.about.content-block .text {
+    font-size: 40px;
+    text-align: center;
+    color: white;
+}
+
+.about.content-block p {
+    margin-top: 1em;
+}
+
+/* Товары */
+.shop.content-block .products {
+    display: flex;
+    gap: 1em;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.shop.content-block .product {
+    background-color: rgb(0, 0, 0, 0.2);
+    padding: 1em;
+    width: 250px;
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.shop.content-block .product h3.title-product {
+    font-size: 35px;
+    width: 100%;
+    text-align: center;
+
+    border-bottom: 3px solid #ef15f0;
+}
+
+
+.shop.content-block img.icon {
+    height: 150px;
+    align-self: center;
+}
+
+.shop.content-block p.subscription {
+    text-align: center;
+    font-size: 23px;
+}
+
+.shop.content-block p.cost {
+    text-align: center;
+    border-top: 3px solid #ef15f0;
+    border-bottom: 3px solid #ef15f0;
+    margin-top: 1em;
+    font-size: 29px;
+}
+
+/* FAQ */
+.content-block.faq {
+    padding: 1em;
+}
+
+.content-block.faq input[type="checkbox"] {
+    display: none;
+}
+
+.content-block.faq label {
+    color: #000;
+    cursor: default;
+    font-weight: normal;
+    line-height: 30px;
+    padding: 10px 0;
+    vertical-align: middle;
+    cursor: pointer;
+    font-size: 30px;
+    color: white;
+    margin-left: 25px;
+}
+
+.content-block.faq label:before {
+    content: ' ';
+    background-image: url('/static/img/faq/plus.png');
+    background-size: 50px;
+    display: inline-block;
+    margin-right: 15px;
+
+    width: 50px;
+    height: 50px;
+    vertical-align: middle;
+}
+
+.content-block.faq input:checked+label:before {
+    background-image: url('/static/img/faq/minus.png');
+}
+
+.content-block.faq .question {
+    margin-top: 3em;
+}
+
+.content-block.faq .answer {
+    margin-left: 2em;
+    padding: 0.4em 2em 0.4em 2em;
+    background-color: rgb(0, 0, 0, 0.2);
+    margin-top: 1em;
+    font-size: 25px;
+    color: white;
+    border-left: #ef15f0 solid 8px;
+}
