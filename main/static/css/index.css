@@ -211,3 +211,69 @@
     color: white;
     border-left: #ef15f0 solid 8px;
 }
+
+/* footer */
+footer {
+    width: 100%;
+    background-image: url('/static/img/footer/bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 2em;
+    color:  rgb(255, 255, 255, 0.9);
+}
+
+footer .top-info {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer .top-info a, footer .top-info p {
+    color:  rgb(255, 255, 255, 0.7);
+    font-size: 1.7em;
+}
+
+footer .top-info a:hover {
+    color:  rgb(255, 255, 255, 0.9);
+    font-size: 1.7em;
+}
+
+footer .developers {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 2em;
+}
+
+footer .developers .devs {
+    display: flex;
+}
+
+footer .developers .dev-card {
+    margin: 10px 20px;
+    opacity: 0.7;
+    transition: ease 0.3s;
+}
+
+footer .developers .dev-card:hover {
+    opacity: 0.9;
+    transform: scale(1.1);
+}
+
+footer .developers img {
+    width: 150px;
+    height: 150px;
+}
+
+footer .developers h2 {
+    font-size: 3em;
+}

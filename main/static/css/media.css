@@ -47,6 +47,20 @@
     .about.content-block .text {
         font-size: 30px;
     }
+
+    /* фУТЕР */
+    footer {
+        justify-content: space-around;
+        min-height: 100vh;
+    }
+
+    footer .top-info {
+        flex-direction: column;
+    }
+
+    footer .top-info a, footer .top-info p {
+        margin: 2em 0.5em;
+    }
 }
 
 /* Пк версия */
