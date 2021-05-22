@@ -21,16 +21,17 @@ makedBills = []
 @csrf_exempt
 def notify(request):
     if request.method == 'POST':
-        
+
         bill = json.loads(request.body)['bill']
-        
+
         # Получаем параметры
         amount = bill['amount']['value']
         billId = bill['billId']
         siteId = bill['siteId']
-        
+
         invoice_parameters = f"RUB|{amount}|{billId}|{siteId}|PAID"
         accept = hmac.new(codecs.encode(settings.QIWI_SECRET_KEY), msg=codecs.encode(invoice_parameters), digestmod=hashlib.sha256).hexdigest()
+
 
         # проверка подлиности
         if request.headers['X-Api-Signature-SHA256'] == accept and billId not in makedBills:
@@ -39,7 +40,7 @@ def notify(request):
             nickname = bill['customer']['account']
             productId = bill['customFields']['productId']
             product = Product.objects.get(id = int(productId))
-            
+
             # Проверка, есть ли игрок с таким ником
             result = botDB.fetchone('users', f"SELECT id FROM Users WHERE nickname = '{nickname}'", invoicesPath)
 
@@ -47,8 +48,8 @@ def notify(request):
                 userId = result[0]
 
                 # Добавляем в бд записи
-                botDB.request('delay', f"INSERT INTO Invoices VALUES('{nickname}', {product.amount})", invoicesPath)
                 botDB.request('delay', f"INSERT INTO Actions VALUES(NULL, 'donate-gold', {userId}, 1)", invoicesPath)
+                botDB.request('delay', f"INSERT INTO Invoices VALUES('{nickname}', {product.amount})", invoicesPath)
 
             # Помечаем заказ выполненым
             makedBills.append(billId)
