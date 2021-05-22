@@ -81,7 +81,11 @@ $(document).ready(function () {
             jqAnswer = $(`#answer-${questionID}`),
             answer = jqAnswer.get(0);
 
-            answer.hidden = !element.checked;
-        
+        answer.hidden = !element.checked;
+
+        if (element.checked) {
+            jqAnswer.fadeOut(0);
+            jqAnswer.fadeIn(300);
+        }
     })
 });
