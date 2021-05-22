@@ -107,7 +107,7 @@
         transition: all 0.1s ease;
     }
     header .logoBlock:hover  {
-        transform: scale(1.1);
+        transform: translateY(-0.3em);
     }
 
     /* Меню */
