@@ -3,6 +3,8 @@ from django.shortcuts import redirect, render
 from django.urls import reverse
 from main.models import AboutContent, MenuContent, Question
 from shop.models import Product
+from django.http import FileResponse, Http404
+
 
 # Create your views here.
 def index(request):
@@ -38,3 +40,10 @@ def index(request):
         }
 
         return render(request, 'main/index.html', context)
+
+
+def agreetment(request):
+    try:
+        return FileResponse(open('files/user_agreetment.pdf', 'rb'), content_type='application/pdf')
+    except FileNotFoundError:
+        raise Http404()

@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '#7(msz#8gcg9qu-#a#trnqr@m)+z@w@^(*8fbg+rvytfeffbj0'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['global-war-csgo.ru', '127.0.0.1']
 
