@@ -1,6 +1,7 @@
 from django.contrib import admin
 from main.models import MenuContent, AboutContent, Question
 
+
 class AdminMenuContent(admin.ModelAdmin):
     list_display = ['id', 'key', 'value']
     list_display_links = ['id', 'key']

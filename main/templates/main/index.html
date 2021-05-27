@@ -43,6 +43,12 @@
             <p>
                 <input type="text" name="nickname" id="nickname">
                 <input type="number" name="productId" value="" id="productId" hidden>
+
+                <div class="join">
+                    <input name='agree' id = 'agree' type="checkbox">
+                    <label for="agree">Я соглашаюсь с <a href="{% url 'agreetment' %}">пользовательским соглашением</a></label>
+                </div>
+
             </p>
             <p class="error"></p>
 

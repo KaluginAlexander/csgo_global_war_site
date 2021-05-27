@@ -85,3 +85,44 @@
 .disable {
     pointer-events: none;
 }
+
+.modal-window .join input[type="checkbox"] {
+    display: none;
+}
+
+.modal-window .join label {
+    color: #000;
+    cursor: default;
+    line-height: 30px;
+    padding: 10px 0;
+    vertical-align: middle;
+    cursor: pointer;
+    font-size: 17px;
+    color: white;
+    margin-left: 25px;
+}
+
+.modal-window a {
+    color: #ef15f0;
+}
+
+
+.modal-window .join label:before {
+    content: ' ';
+    display: inline-block;
+    margin-right: 15px;
+
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 3em;
+    
+    border: #dd7afb 1px solid;
+    background-color: #680071;
+}
+
+
+.modal-window .join input:checked+label:before {
+    content: '✔';
+}

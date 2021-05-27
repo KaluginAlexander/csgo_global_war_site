@@ -18,12 +18,23 @@ $(document).ready(function () {
         let productId = $(this).data('id');
         $('#productId').val(productId);
 
+        // Сброс значения пс
+        let agree = document.querySelector('#agree');
+        agree.checked = false;
+
     })
 
     // Обработка модалки
     $('#pay').on('click', function(){
+        let agree = document.querySelector('#agree');
+
         if ($('#nickname').val().length < 3) {
             $('.modal-window .content .error').text('Минимальная длина ника составляет 3 символа')
+            return false;
+        }
+
+        else if (! agree.checked) {
+            $('.modal-window .content .error').text('Извините, но чтобы провести транзацкию необходимо согласиться с пользовательским соглашением')
             return false;
         }
     })

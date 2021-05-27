@@ -42,8 +42,14 @@ def index(request):
         return render(request, 'main/index.html', context)
 
 
+import os
+from csgo_global_war_site.settings import BASE_DIR
+
 def agreetment(request):
     try:
-        return FileResponse(open('files/user_agreetment.pdf', 'rb'), content_type='application/pdf')
+
+        file = os.path.join(BASE_DIR, 'files/user_agreetment.pdf')
+
+        return FileResponse(open(file, 'rb'), content_type='application/pdf')
     except FileNotFoundError:
         raise Http404()
