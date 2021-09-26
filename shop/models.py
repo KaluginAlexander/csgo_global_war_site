@@ -22,7 +22,7 @@ class Product(models.Model):
         global PUBLIC_KEY
         amount = Product.objects.get(id = int(productId)).cost
         
-        return f'https://oplata.qiwi.com/create?publicKey={settings.QIWI_PUBLIC_KEY}&account={account}&amount={amount}&successUrl={successUrl}&customFields[productId]={productId}'
+        return f'https://oplata.qiwi.com/create?publicKey={settings.QIWI_PUBLIC_KEY}&account={account}&amount={amount}&successUrl={successUrl}&customFields[productId]={productId}&customFields[themeCode]=Aleksandr-KWK5mSrChu'
 
     
     class Meta:
